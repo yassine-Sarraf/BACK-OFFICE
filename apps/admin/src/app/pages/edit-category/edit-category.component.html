@@ -1,0 +1,28 @@
+        <div class="row sub-container">
+            <h3>Edit category</h3>
+            <div class="">
+                <div class="form-group">
+                    <p>Please fill the form bellow</p>
+                    <label  ass="col-form-label " for="label">label<span>*</span></label>
+                    <input [(ngModel)]="categoryToPut.label" type="text" class="form-control" id="label">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="icon">icon<span>*</span></label>
+                    <select  class="form-select" [(ngModel)]="categoryToPut.icon" name="" id="">
+                        <option value="fa fa-book">book</option>
+                        <option value="fa fa-mobile">mobile phone</option>
+                        <option value="fa fa-gamepad">remote</option>
+                        <option value="fa fa-camera">camera</option>
+                        <option value="fa fa-television">TV</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="color">color<span>*</span></label>
+                    <input [(ngModel)]="categoryToPut.color" type="color" class="form-control" id="color">
+                </div>
+                <div align="right" class="mt-4">
+                    <button (click)=" editCategory()" class="btn btn-success">edit category</button>
+                </div>
+            </div>
+        </div>

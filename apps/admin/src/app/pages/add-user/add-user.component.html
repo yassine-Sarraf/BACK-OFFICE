@@ -1,0 +1,59 @@
+<div class="row sub-container">
+    <h3 class="mb-3">Add user</h3>
+    <div class="col-md-6">
+        <div class="form-group mt-3">
+            <label  ass="col-form-label" for="admin">Admin<span>*</span></label>
+            <select [(ngModel)]="userToAdd.isAdmin"  class="form-select"  id="admin">
+                <option  value="true">true</option>
+                <option  value="false">false</option>
+            </select>
+        </div>
+        <div class="form-group mt-3">
+            <label  ass="col-form-label " for="address">Address</label>
+            <textarea [(ngModel)]="userToAdd.address"  class="form-control" name="" id=""  cols="30" rows="2"></textarea>
+
+        </div>
+         <div class="form-group mt-3">
+            <label  ass="col-form-label " for="country">Country</label>
+            <select [(ngModel)]="userToAdd.country"  class="form-select" id="country">
+                <option *ngFor="let item of countries" [value]="item">{{item}}</option>
+            </select> 
+        </div>
+        <div class="form-group mt-3">
+            <label [(ngModel)]="userToAdd.city" ass="col-form-label " for="city">City</label>
+            <select [(ngModel)]="userToAdd.city"  class="form-select" id="city" >
+                <option *ngFor="let item of Cities" [value]="item">{{item}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group mt-3">
+            <label  ass="col-form-label " for="name">Name<span>*</span></label>
+            <input  [(ngModel)]="userToAdd.name"  type="text" class="form-control"  id="name">
+
+        </div>
+        <div class="form-group mt-3">
+            <label  ass="col-form-label " for="email">Email<span>*</span></label>
+            <input [(ngModel)]="userToAdd.email"  type="email" class="form-control" id="email">
+
+        </div>
+        <div class="form-group mt-3">
+            <label  ass="col-form-label " for="password">Password<span>*</span></label>
+            <input [(ngModel)]="userToAdd.password"  type="text" class="form-control" id="password">
+
+        </div>
+        
+       
+        <div class="form-group mt-3">
+            <label  ass="col-form-label " for="phone">Phone<span>*</span></label>
+            <input type="tel" pattern="[0-9]+" [(ngModel)]="userToAdd.phone"   class="form-control"  id="phone">
+
+            
+        </div>
+        
+        
+        <div align="right" class="mt-4">
+            <button (click)="addUser()" class="btn btn-success">Add user </button>
+        </div>
+    </div>
+</div>

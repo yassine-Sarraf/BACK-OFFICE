@@ -1,0 +1,27 @@
+
+<div class="ListAndBtn">
+  <h3 >List of categories</h3> 
+  <a class="btn btn-success" [routerLink]="['/addCategory']">add category</a>
+</div>
+  <table class="table table-hover mt-3">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">label</th>
+      <th scope="col">icon</th>
+      <th scope="col">color</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let item of Allcategories" class="table-light">
+        <td>{{item.label}}</td>
+        <td><i class="{{item.icon}}" aria-hidden="true">&nbsp;</i>{{item.icon}}</td>
+        <td [ngStyle]="{'color':item.color}" >{{item.color}}</td>
+        <td >
+          <button (click)="editCategory(item)" class="btn btn-secondary mx-2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;edit</button>
+          <button (click)="deleteCategory(item._id)" class="btn btn-danger mx-2"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;delete</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<router-outlet></router-outlet>

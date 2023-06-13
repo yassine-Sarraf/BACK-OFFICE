@@ -1,0 +1,62 @@
+<div class="row">
+    <h3 class="col-10">List of Products</h3>
+    <button *ngIf="card" (click)="tableCard()" class="col-1 tableCardBtn"  ><i class="fa fa-th-large" aria-hidden="true"></i>&nbsp; Table</button>
+    <button *ngIf="!card" (click)="tableCard()" class="col-1 tableCardBtn"  ><i class="fa fa-square" aria-hidden="true"></i>&nbsp; Card</button>
+</div>
+
+<div class="mt-4 row">
+    <ng-container *ngIf="card" >
+    <div *ngFor="let product of products" class="col-md-3 product-card mx-1">
+        <div *ngIf="product.isFeatred" class="badge">featred</div>
+        <div class="product-tumb">
+            <img [src]="product.thumbnail" alt="">
+        </div>
+        <div class="product-details">
+            <span *ngIf="product.category?.label" class="product-catagory">{{product.category?.label}}</span>
+            <h4><a href="">{{product.title}}</a></h4>
+            <p>{{product.description}}</p>
+            <div class="product-bottom-details " >
+                <div class="product-price  ">{{product.price}}$</div>
+                
+            </div>
+            <div class="action row mt-4">
+                <button (click)="deleteProduct(product._id)" class="btn btn-danger col-5 "><i class="fa fa-trash-o" aria-hidden="true"></i>delete
+                </button>
+                <button (click)="editProduct(product._id)" class="btn btn-secondary col-5"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i>edit
+                </button>
+            </div>
+        </div>
+    </div>    
+    </ng-container>
+
+    <ng-container *ngIf="!card" >
+    <table class="table table-hover">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">title</th>
+            <th scope="col">stock</th>
+            <th scope="col">price</th>
+            <th scope="col">rating</th>
+            <th scope="col">featred</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products" class="table-active">
+            <th scope="row">{{product.title}}</th>
+            <td>{{product.countStock}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{product.isFeatred}}</td>
+            <td class="row">
+                <button (click)="deleteProduct(product._id)" class="btn btn-danger col-6 "><i class="fa fa-trash-o" aria-hidden="true"></i>delete
+                </button>
+                <button (click)="editProduct(product._id)" class="btn btn-secondary col-6 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i>edit
+                </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>    
+    </ng-container>
+
+</div>

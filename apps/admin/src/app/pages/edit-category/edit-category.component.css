@@ -1,0 +1,14 @@
+img{
+    vertical-align: middle;
+    width: 100%;
+    HEIGHT: fit-content;
+}
+span{
+    color: #ff0000;
+}
+.sub-container{
+    margin: auto;
+    margin-top: 20px;
+    align-items: center;
+    width: 80%;
+}

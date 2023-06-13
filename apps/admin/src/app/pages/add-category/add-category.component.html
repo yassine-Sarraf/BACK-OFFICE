@@ -1,0 +1,28 @@
+        <div class="row">     
+            <h3>Add category</h3>
+            <div class="form">
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="label">label</label>
+                    <input [(ngModel)]="categoryToAdd.label" type="text" class="form-control" id="label">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="icon">icon</label>
+                    <select class="form-select" id="icon"[(ngModel)]="categoryToAdd.icon" name="">
+                        <option value="fa fa-book">book</option>
+                        <option value="fa fa-mobile">mobile phone</option>
+                        <option value="fa fa-gamepad">remote</option>
+                        <option value="fa fa-camera">camera</option>
+                        <option value="fa fa-television">TV</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="color">color</label>
+                    <input [(ngModel)]="categoryToAdd.color" type="color" class="form-control" id="color">
+                </div>
+                <div align="right">
+                    <button  (click)="addCategory()" class="btn btn-success">Add category</button>
+                </div>
+            </div>
+        </div>
+      

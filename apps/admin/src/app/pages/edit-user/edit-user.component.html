@@ -1,0 +1,78 @@
+    <div class="row sub-container">
+        <h3>Edit User</h3>
+        
+        <div class="col-md-6">
+            <div class="form-group mt-3">
+                <label  ass="col-form-label " for="name">Name<span>*</span></label>
+                <input [(ngModel)]="userToPatch.name" *ngIf="edit" type="text" class="form-control" [value]="user.name" id="name">
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled type="text" disabled class="form-control" [value]="user.name" id="name">
+
+            </div>
+            <div class="form-group mt-3">
+                <label  ass="col-form-label " for="email">Email<span>*</span></label>
+                <input [(ngModel)]="userToPatch.email" *ngIf="edit" type="email" class="form-control" [value]="user.email" id="email">
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled type="email" class="form-control" [value]="user.email" id="email">
+
+            </div>
+            <div class="form-group mt-3">
+                <label  ass="col-form-label " for="password">Password<span>*</span></label>
+                <input [(ngModel)]="userToPatch.password" *ngIf="edit" type="text" class="form-control" [value]="user.password"id="password">
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled type="text" class="form-control" [value]="user.password"id="password">
+
+            </div>
+            <div class="form-group mt-3">
+                <label  ass="col-form-label " for="address">Address</label>
+                <textarea [(ngModel)]="userToPatch.address" *ngIf="edit" class="form-control" name="" id="" cols="30" rows="4">{{user.address}}</textarea>
+                <!-- the same field but disabled -->
+                <textarea *ngIf="!edit" disabled class="form-control" name="" id="" cols="30" rows="4">{{user.address}}</textarea>
+
+            </div>
+            
+            <div class="form-group mt-3">
+                <label  ass="col-form-label" for="admin">Admin<span>*</span></label>
+                <select [(ngModel)]="userToPatch.isAdmin" *ngIf="edit" class="form-select" [value]="user.isAdmin" id="admin">
+                    <option  value="true">true</option>
+                    <option  value="false">false</option>
+                </select>
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled type="text" class="form-control" [value]="user.isAdmin" id="phone">
+            </div>
+            
+           
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mt-3">
+                <label  ass="col-form-label " for="country">Country</label>
+                <select [(ngModel)]="userToPatch.country" *ngIf="edit" class="form-select" id="country" [value]="user.country">
+                    <option *ngFor="let item of countries" [value]="item">{{item}}</option>
+                </select> 
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled type="text" class="form-control" [value]="user.country" id="phone">
+            </div>
+            <div class="form-group mt-3">
+                <label [(ngModel)]="userToPatch.city" ass="col-form-label " for="city">City</label>
+                <select [(ngModel)]="userToPatch.city" *ngIf="edit" class="form-select" id="city" [value]="user.city">
+                    <option *ngFor="let item of Cities" [value]="item">{{item}}</option>
+                </select>
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled type="text" class="form-control" [value]="user.city" id="phone">
+            </div>
+           
+            <div class="form-group mt-3">
+                <label  ass="col-form-label " for="phone">Phone<span>*</span></label>
+                <input type="tel" pattern="[0-9]+" [(ngModel)]="userToPatch.phone" *ngIf="edit"  class="form-control"  id="phone">
+                <!-- the same field but disabled -->
+                <input *ngIf="!edit" disabled  class="form-control" [value]="user.phone" id="phone">
+                <div align="right" class="mt-4">
+                    <button *ngIf="!edit" (click)="changeEdit()" class="btn btn-success">Edit </button>
+                    <button *ngIf="edit"  (click)="changeEdit()" class="btn btn-dark mx-2">Cancel</button>
+                    <button *ngIf="edit"  (click)="editUser()"  class="btn btn-warning mx-2">Update</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+

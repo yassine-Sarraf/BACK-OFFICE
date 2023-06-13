@@ -1,0 +1,26 @@
+    <h3>List of Orders</h3>
+    <table class="table table-hover">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">Shipping adrress</th>
+            <th scope="col">Invoice address</th>
+            <th scope="col">status</th>
+            <th scope="col">date</th>
+            <th scope="col">Total</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders" class="table-light">
+            <td>{{order.shippingAddress }}</td>
+            <td>{{order.invoiceAddress}}</td>
+            <td>
+                <select (change)="patchUser(order.status,order._id)" class="form-select" [(ngModel)]="order.status" id="exampleSelect1">
+                    <option  *ngFor="let item of status" [value]="item" >{{item}}</option>
+                </select>
+            </td>
+            <td>{{order.created_at | date:'short'}}</td>
+            <td>{{order.total |currency: ''}}</td>
+          </tr>
+        </tbody>
+    </table>

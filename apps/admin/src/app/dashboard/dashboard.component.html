@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="main col-md-2 ">
+      <div class="logo">
+        <img src="assets/images/Black & White Minimalist Aesthetic Initials Font Logo.png" alt="">
+      </div>
+      <p>{{email}}</p>
+      <p>{{name}} </p>
+      <div class="accordionContainer" id="">
+        <div class="Ybtn accordion-item" >
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <i class="fa fa-users" aria-hidden="true"></i>&nbsp; user
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+            <div class="accordion-body">
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/usersList']" >
+                <i class="fa fa-list" aria-hidden="true"></i>
+                &nbsp;list of users</a>
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/addUser']"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;add user</a>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="Ybtn accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; orders
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+            <div class="accordion-body">
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/orders']" ><i class="fa fa-list" aria-hidden="true"></i>
+                &nbsp;list of orders</a>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="Ybtn accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              &nbsp; category
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
+            <div class="accordion-body">
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/categoryList']" ><i class="fa fa-list" aria-hidden="true"></i>
+                &nbsp;categories list</a>
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/addCategory']"><i class="fa fa-plus" aria-hidden="true"></i>
+                &nbsp;add category</a>
+                
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="Ybtn accordion-item" >
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp; products
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample" style="">
+            <div class="accordion-body">
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/productsList']" ><i class="fa fa-list" aria-hidden="true"></i>
+                &nbsp;list of products</a>
+              <a class="Ybtn-a" [routerLink]="['/dashBoard/addProduct']"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                &nbsp;add product</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      <div class="col-md-10" style="padding: 0%;">
+        <nav class="navbar nav-menu navbar-expand-lg navbar-dark bg-dark">
+          <div class="row px-4">
+            <div class="col-md-3">
+              <a class="navbar-brand" href="#">PHOENIX</a>
+            </div>
+            <div class="col-md-9">
+              <form class="text-end">
+                <button  class="lognInOuT">login</button>
+                <button (click)="logout()" class="lognInOuT">log out</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subContant">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

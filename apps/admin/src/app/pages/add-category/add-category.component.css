@@ -1,0 +1,10 @@
+button{
+    margin-top: 13px;
+}
+img{
+    width: -webkit-fill-available;
+}
+.form{
+    width: 70%;
+    margin: auto;
+}

@@ -1,0 +1,61 @@
+
+    <div class="row">
+        <h3>Add product</h3>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="title">Title</label>
+                <input [(ngModel)]="productToAdd.title" type="text" class="form-control" placeholder="title" id="title">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="content">Content</label>
+                <input [(ngModel)]="productToAdd.content" type="text" class="form-control" placeholder="content" id="content">
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea" class="form-label mt-4">Description </label>
+                <textarea [(ngModel)]="productToAdd.description" class="form-control" id="Description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="content">Price</label>
+                <input [(ngModel)]="productToAdd.price" type="number" class="form-control"  id="price">
+            </div>           
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="category">Category</label>
+                <!-- <input [(ngModel)]="productToAdd.category" type="text" class="form-control" placeholder="description" id="category"> -->
+                <select [(ngModel)]="productToAdd.category" class="form-select" id="exampleSelect1">
+                    <option *ngFor="let item of categories" [value]="item._id">{{item.label}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="brand">Brand</label>
+                <input [(ngModel)]="productToAdd.brand" type="text" class="form-control" placeholder="content" id="brand">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="countStock">Count Stock</label>
+                <input [(ngModel)]="productToAdd.countStock" type="number" min="0"  class="form-control" placeholder="countStock" id="countStock">
+            </div>
+            <!-- <div class="form-group">
+                <label class="col-form-label mt-2" for="thumbnail">Thumbnail</label>
+                <input type="file" (change)="onFileSelected($event)" />
+            </div> -->
+            <div class="form-group">
+                <label for="formFile" class="form-label mt-2">Thumbnail </label>
+                <input class="form-control" (change)="onFileSelected($event)" type="file" id="formFile">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="rating">Rating</label>
+                <input [(ngModel)]="productToAdd.rating" type="number" min="0" max="5" class="form-control" placeholder="rating" id="rating">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label mt-2" for="isFeatred">Is featred</label>
+                <select [(ngModel)]="productToAdd.isFeatred" class="form-select" id="isFeatred">
+                    <option [value]="true" >True</option>
+                    <option [value]="false" >False</option>
+                </select>
+            </div>
+        </div>   
+        <div align="right" class="mt-3">
+            <button  class="btn-success btn" (click)="postProduct()">Add product</button>
+        </div>
+    </div>

@@ -1,0 +1,11 @@
+img{
+    vertical-align: middle;
+    width: 100%;
+    height: fit-content;
+}
+span{
+    color: red;
+}
+.sub-container{
+    margin: auto;
+}
